@@ -1,6 +1,6 @@
 # A Minimalist Task Tracker
 ## About
-A Minimalistic Task Tracker (AMT) is a CLI-based task tracker that stores tasks in a JSON file using various commands.
+A Minimalistic Task Tracker (AMTT) is a CLI-based task tracker that stores tasks in a JSON file using various commands.
 
 ## Important
 Project URL: https://roadmap.sh/projects/task-tracker
@@ -28,7 +28,7 @@ Once you are finished with these steps, you can run commands through any termina
 ## Commands
 There are 6 commands as of creating this project.
 
-All commands start with ```bash task-cli```. Please add quotation marks around task NAMES to avoid formatting/argument errors.
+All commands start with ```task-cli```. Please add quotation marks around task NAMES to avoid formatting/argument errors.
 
 1. ```add [task-name]``` Adds a task with a custom name. New tasks have a status of ```todo```
 2. ```update [task-id] [new-task-name]``` Updates a task's name
