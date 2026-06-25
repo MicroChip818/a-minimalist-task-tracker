@@ -1,21 +1,25 @@
 import json
 import sys
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_PATH = os.path.join(BASE_DIR, "tasks.json")
 
 if len(sys.argv) < 2:
      print('Please enter a valid command')
      exit()
 
 def save_tasks(tasks): # Saves the task dictionary into the JSON file
-    with open('tasks.json', 'w') as f:
+    with open(FILE_PATH, 'w') as f:
         json.dump(tasks, f, indent=4)
 
 def load_tasks(): # Loads the task dictionary from the JSON file
     try:
-        with open('tasks.json', 'r') as f:
+        with open(FILE_PATH, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         save_tasks(tasks)
-        with open('tasks.json', 'r') as f:
+        with open(FILE_PATH, 'r') as f:
             return json.load(f)
     
 def add_task(tasks, description):
