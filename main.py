@@ -27,14 +27,14 @@ def add_task(tasks, description):
         'description': description,
         'status': 'todo',
         'id': task_id})
-    print(f"your task has been added | id {task_id}")
+    print(f"task added | id {task_id}")
     return tasks
 
 def update_task(tasks, task_id, new_description):
     for task in tasks:
         if task['id'] == int(task_id):
             task['description'] = new_description
-            print(f"your task has been updated | id {task_id}")
+            print(f"task updated | id {task_id}")
             return tasks
     print('404 | id not found')
     return tasks
@@ -43,6 +43,7 @@ def delete_task(tasks, task_id):
     for task in tasks:
         if task['id'] == int(task_id):
             tasks.remove(task)
+            print(f"task deleted | id {task_id}")
             return tasks
     print('404 | id not found')
     return tasks
@@ -50,7 +51,8 @@ def delete_task(tasks, task_id):
 def mark_in_progress(tasks, task_id):
     for task in tasks:
         if task['id'] == int(task_id):
-            task['status'] = 'in-progress' 
+            task['status'] = 'in-progress'
+            print(f"task marked in-progress | id {task_id}") 
             return tasks
     print('404 | id not found')
     return tasks
@@ -59,6 +61,7 @@ def mark_done(tasks, task_id):
     for task in tasks:
         if task['id'] == int(task_id):
             task['status'] = 'done'
+            print(f"task marked done | id {task_id}")
             return tasks
     print('404 | id not found')
     return tasks
