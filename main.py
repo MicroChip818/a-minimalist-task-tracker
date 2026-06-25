@@ -1,6 +1,7 @@
 import json
 import sys
 import os
+from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FILE_PATH = os.path.join(BASE_DIR, "tasks.json")
@@ -9,11 +10,14 @@ if len(sys.argv) < 2:
      print('Please enter a valid command')
      exit()
 
-def save_tasks(tasks): # Saves the task dictionary into the JSON file
+def now():
+    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+def save_tasks(tasks):
     with open(FILE_PATH, 'w') as f:
         json.dump(tasks, f, indent=4)
 
-def load_tasks(): # Loads the task dictionary from the JSON file
+def load_tasks():
     try:
         with open(FILE_PATH, 'r') as f:
             return json.load(f)
@@ -28,9 +32,10 @@ def add_task(tasks, description):
     else:
         task_id = 1
     tasks.append({
+        'id': task_id,
         'description': description,
         'status': 'todo',
-        'id': task_id})
+        'createdAt': now()})
     print(f"task added | id {task_id}")
     return tasks
 
@@ -38,6 +43,7 @@ def update_task(tasks, task_id, new_description):
     for task in tasks:
         if task['id'] == int(task_id):
             task['description'] = new_description
+            task['updatedAt'] = now()
             print(f"task updated | id {task_id}")
             return tasks
     print('404 | id not found')
