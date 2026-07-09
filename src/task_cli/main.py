@@ -3,8 +3,8 @@ import sys
 import os
 from datetime import datetime
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__)) # Base project directory
-FILE_PATH = os.path.join(BASE_DIR, "tasks.json") # Joins the current tasks.json file (or the one to be created if none exists) with the base project directory
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+FILE_PATH = os.path.join(BASE_DIR, "tasks.json")
 
 if len(sys.argv) < 2: # Invalid command due to commands taking at least 2 arguments
      print('Please enter a valid command')
@@ -123,5 +123,7 @@ def main(): # Main function
         print('Please enter a valid command')
         exit() # Exits the program if no valid command is given
     save_tasks(tasks) # Saves the list into the JSON file
+    pass
 
-main()
+if __name__ == "__main__":
+    main()
