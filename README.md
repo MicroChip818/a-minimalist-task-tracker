@@ -8,16 +8,17 @@ Project URL: https://roadmap.sh/projects/task-tracker
 To run this project, you must install Python if it is not on your computer already: https://www.python.org/downloads/
 
 ## How to run this project
-### Without Git
-Download the ZIP folder and extract it
 
 ### With Git
-Clone the repository:
+1A. Clone the repository:
 ```bash
 cd "C:\Users\eckkh\Programming Projects\Python Projects\A Minimalist Task Tracker"
 git clone https://github.com/MicroChip818/a-minimalist-task-tracker.git
 cd https://github.com/MicroChip818/a-minimalist-task-tracker
 ```
+
+### Without Git
+1B. Download the ZIP folder and extract it.
 
 ### Next Steps
 2. Create a virtual environment:
