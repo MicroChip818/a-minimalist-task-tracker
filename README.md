@@ -9,19 +9,28 @@ To run this project, you must install Python if it is not on your computer alrea
 
 ## How to run this project
 ### Without Git
-1. Download the ZIP folder and extract it
-2. Create a new folder in the C directory, and copy the task-cli.bat file to the new folder
-3. Add the same folder to PATH
+Download the ZIP folder and extract it
 
 ### With Git
-1. Clone the repository:
+Clone the repository:
 ```bash
 cd "C:\Users\eckkh\Programming Projects\Python Projects\A Minimalist Task Tracker"
 git clone https://github.com/MicroChip818/a-minimalist-task-tracker.git
 cd https://github.com/MicroChip818/a-minimalist-task-tracker
 ```
-2. Create a new folder in the C directory, and copy the task-cli.bat file to the new folder
-3. Add the same folder to PATH
+
+### Next Steps
+2. Create a virtual environment:
+```bash
+# On Linux or MacOS:
+source .venv/bin/activate
+# On Windows:
+.venv\Scripts\activate
+```
+3. Install the package:
+```bash
+pip install -e
+```
 
 Once you are finished with these steps, you can run commands through any terminal.
 
